@@ -93,9 +93,9 @@ sudo -u postgres python3 /opt/zabbix-audit/zabbix_audit_backfill.py 2026-01-01
 ## Exemplo de Saída
 
 ```
-[2026-05-08 14:46:04] USUARIO=hugodeolindo IP=10.96.32.57 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Indisponivel por ping ICMP HOST=dfbsbsaandcswpa01 | DETALHE: trigger.status => 1,"0
-[2026-01-09 13:27:44] USUARIO=mauro.p IP=10.96.40.147 TIPO=Host ACAO=CRIOU OBJETO=dcsaansrvmirror02 - Banco Cache teste HOST=dcsaansrvmirror02 - Banco Cache teste
-[2026-02-13 10:31:09] USUARIO=werickvl IP=10.96.40.149 TIPO=Manutenção ACAO=CRIOU OBJETO=DCSAANSRVPHAPP3 - Protheus aplicação.. | DETALHE: maintenance.name => ADICIONOU: "DCSAANSRVPHAPP3...
+[2026-05-08 14:46:04] USUARIO=nome.sobrenome IP=10.55.24.5 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Indisponivel por ping ICMP HOST=servidor-1 | DETALHE: trigger.status => 1,"0
+[2026-01-09 13:27:44] USUARIO=nome.sobrenome IP=10.88.20.244 TIPO=Host ACAO=CRIOU OBJETO=servidor-1 - Banco Cache teste HOST=servidor-2 - Banco Cache teste
+[2026-02-13 10:31:09] USUARIO=nome.sobrenome IP=10.0.1.15 TIPO=Manutenção ACAO=CRIOU OBJETO=servidor-1 - Protheus aplicação.. | DETALHE: maintenance.name => ADICIONOU: "servidor-3...
 ```
 
 ---
@@ -104,7 +104,7 @@ sudo -u postgres python3 /opt/zabbix-audit/zabbix_audit_backfill.py 2026-01-01
 
 ```bash
 # Todas as ações de um usuário em triggers
-grep "hugodeolindo" /var/log/zabbix-audit/audit_triggers_2026-*.log
+grep "user.name" /var/log/zabbix-audit/audit_triggers_2026-*.log
 
 # Triggers inativadas no mês
 grep "trigger.status => 1" /var/log/zabbix-audit/audit_triggers_2026-05.log
@@ -113,7 +113,7 @@ grep "trigger.status => 1" /var/log/zabbix-audit/audit_triggers_2026-05.log
 grep -E "ACAO=CRIOU|ACAO=DELETOU" /var/log/zabbix-audit/audit_hosts_2026-05.log
 
 # Busca em arquivos comprimidos
-zgrep "hugodeolindo" /var/log/zabbix-audit/archive/audit_triggers_*.log.gz
+zgrep "user.name" /var/log/zabbix-audit/archive/audit_triggers_*.log.gz
 
 # Excluir usuários específicos
 grep -v -E "USUARIO=fulano |USUARIO=ciclano " /var/log/zabbix-audit/audit_triggers_2026-*.log
