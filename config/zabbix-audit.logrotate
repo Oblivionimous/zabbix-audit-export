@@ -1,0 +1,20 @@
+# /etc/logrotate.d/zabbix-audit
+# Rotaciona os logs de auditoria do Zabbix mensalmente
+# Retenção de 24 meses com compressão .gz
+
+/var/log/zabbix-audit/audit_*.log {
+    monthly
+    rotate 24
+    compress
+    delaycompress
+    missingok
+    notifempty
+    dateext
+    dateformat -%Y-%m
+    olddir /var/log/zabbix-audit/archive
+    create 0640 postgres postgres
+    sharedscripts
+    postrotate
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Logrotate executado." >> /var/log/zabbix-audit/cron.log
+    endscript
+}

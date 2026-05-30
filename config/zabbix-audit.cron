@@ -1,0 +1,5 @@
+# /etc/cron.d/zabbix-audit
+# Exportação automática do auditlog do Zabbix — 3x ao dia
+# Ajuste o caminho do script se necessário
+
+0 6,12,18 * * * postgres python3 /opt/zabbix-audit/zabbix_audit_export.py >> /var/log/zabbix-audit/cron.log 2>&1
