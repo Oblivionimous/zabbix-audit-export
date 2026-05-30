@@ -103,27 +103,27 @@ maintenance.name => ADICIONOU: "Nome da manutenção,"maintenance.active_since =
 
 ### Trigger inativada em massa
 ```
-[2026-05-08 14:46:04] USUARIO=hugodeolindo IP=10.96.32.57 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Indisponivel por ping ICMP HOST=dfbsbsaandcswpa01 | DETALHE: trigger.status => 1,"0
-[2026-05-08 14:46:04] USUARIO=hugodeolindo IP=10.96.32.57 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Alta perda de ping ICMP HOST=dfbsbsaandcswpa01 | DETALHE: trigger.status => 1,"0
-[2026-05-08 14:46:04] USUARIO=hugodeolindo IP=10.96.32.57 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Sem coleta de dados SNMP HOST=dfbsbsaandcswpa01 | DETALHE: trigger.status => 1,"0
+[2026-05-08 14:46:04] USUARIO=user.name IP=10.0.1.15 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Indisponivel por ping ICMP HOST=servidor1 | DETALHE: trigger.status => 1,"0
+[2026-05-08 14:46:04] USUARIO=user.name IP=10.0.1.15 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Alta perda de ping ICMP HOST=servidor1 | DETALHE: trigger.status => 1,"0
+[2026-05-08 14:46:04] USUARIO=user.name IP=10.0.1.15 TIPO=Trigger ACAO=ATUALIZOU OBJETO=Sem coleta de dados SNMP HOST=servidor1 | DETALHE: trigger.status => 1,"0
 ```
 
 ### Host criado
 ```
-[2026-01-09 13:27:44] USUARIO=hugodeolindo IP=10.96.40.136 TIPO=Host ACAO=CRIOU OBJETO=DF-BSB-DIGITAL NOROESTE HOST=DF-BSB-DIGITAL NOROESTE
+[2026-01-09 13:27:44] USUARIO=user.name IP=10.0.1.15 TIPO=Host ACAO=CRIOU OBJETO=servidor1 NOROESTE HOST=servidor1
 ```
 
 ### Host com IP atualizado
 ```
-[2026-05-05 11:35:42] USUARIO=hugodeolindo IP=10.96.32.57 TIPO=Host ACAO=ATUALIZOU OBJETO=SRVIMG | DETALHE: host.description => "Equipe PACS IP Novo: 10.33.42.5 | ERA: IP Antigo: 10.33.42.8
+[2026-05-05 11:35:42] USUARIO=user.name IP=10.0.1.15 TIPO=Host ACAO=ATUALIZOU OBJETO=SRVIMG | DETALHE: host.description => "Equipe atualização de IP"
 ```
 
 ### Script executado manualmente
 ```
-[2026-04-30 15:36:32] USUARIO=hugo.deolindo IP=10.96.32.57 TIPO=Script ACAO=EXECUTOU OBJETO=dcsaansrvfluigpf | DETALHE: script.command => ADICIONOU: "ping -c 3 10.96.128.116...,"script.output => ADICIONOU: "3 packets transmitted, 0 received, 100% packet loss
+[2026-04-30 15:36:32] USUARIO=user.name IP=10.0.1.15 TIPO=Script ACAO=EXECUTOU OBJETO=servidor1 | DETALHE: script.command => ADICIONOU: "ping -c 3 10.0.1.15...,"script.output => ADICIONOU: "3 packets transmitted, 0 received, 100% packet loss
 ```
 
 ### Janela de manutenção criada
 ```
-[2026-02-13 10:31:09] USUARIO=werickvl IP=10.96.40.149 TIPO=Manutenção ACAO=CRIOU OBJETO=DCSAANSRVPHAPP3 - Protheus aplicação.. | DETALHE: maintenance.name => ADICIONOU: "DCSAANSRVPHAPP3 - Protheus aplicação..,"maintenance.description => ADICIONOU: "Realizando Gmud para melhoria da aplicação
+[2026-02-13 10:31:09] USUARIO=user.name IP=10.0.1.15 TIPO=Manutenção ACAO=CRIOU OBJETO=servidor1.. | DETALHE: maintenance.name => ADICIONOU: "servidor1..,"maintenance.description => ADICIONOU: "Realizando Gmud para melhoria da aplicação
 ```
